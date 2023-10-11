@@ -1,6 +1,6 @@
 package slicefuncs
 
-// FindAll 在slice中搜索所有符合条件（condition函数返回true）的元素
+// FindAll 在slice中搜索所有符合条件（condition函数返回true）的元素.
 func FindAll[T interface{}](slice []T, contdition func(T) bool) []T {
 	result := []T{}
 	for _, item := range slice {

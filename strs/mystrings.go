@@ -26,7 +26,7 @@ func Reverse(s string) string {
 	}
 }
 
-// TrimMultiSpace by xp, get rid of all spaces
+// TrimMultiSpace by xp, get rid of all spaces.
 func TrimMultiSpace(s string) (r string) {
 	t := s
 	for {

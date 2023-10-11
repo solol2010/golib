@@ -10,6 +10,7 @@ type User struct {
 	name string
 }
 
+// .
 func TestForEach(t *testing.T) {
 	arr := []User{{id: 1, name: "tom"}, {id: 2, name: "jack"}}
 	ForEach(arr, func(e *User) {

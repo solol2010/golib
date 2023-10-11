@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-// create a test function for SplitLast
+// create a test function for SplitLast.
 func TestSplitLast(t *testing.T) {
 	s := "a/b/c"
 	sep := "/"

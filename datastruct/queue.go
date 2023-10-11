@@ -5,6 +5,8 @@ import (
 	"sync"
 )
 
+// .
+
 type queue[T any] struct {
 	sync.RWMutex
 	arr []T

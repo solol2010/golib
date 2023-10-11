@@ -5,6 +5,7 @@ import (
 	"sync"
 )
 
+// .
 type stack[T any] struct {
 	sync.RWMutex
 	arr []T

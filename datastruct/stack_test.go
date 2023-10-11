@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// .
 func TestPush(t *testing.T) {
 	s := NewStack[int]()
 	s.Push(1)
