@@ -72,11 +72,20 @@ func ForEachParal[T interface{}](slice []T, n int, action func(e *T)) {
 }
 
 // Map 使用映射函数将 []T1 转换成 []T2。
-// 映射函数 f 接受两个类型类型 T1 和 T2。
+// 映射函数 mapper 接受两个类型类型 T1 和 T2。
 func Map[T1 interface{}, T2 interface{}](slice []T1, mapper func(T1) T2) []T2 {
 	mapped := make([]T2, len(slice))
 	for i := 0; i < len(slice); i++ {
 		mapped[i] = mapper(slice[i])
+	}
+	return mapped
+}
+
+// MapMethod 对[]T1的每个元素调用T1的某个方法（定义在*T1上），转换成 []T2。
+func MapMethod[T1 interface{}, T2 interface{}](slice []T1, method func(*T1) T2) []T2 {
+	mapped := make([]T2, len(slice))
+	for i := 0; i < len(slice); i++ {
+		mapped[i] = method(&slice[i])
 	}
 	return mapped
 }
