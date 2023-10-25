@@ -110,3 +110,29 @@ func TestMin(t *testing.T) {
 	})
 	fmt.Println(index, max)
 }
+
+func TestFilterBySlice(t *testing.T) {
+	type Person struct {
+		ID   int
+		Name string
+	}
+	a := []Person{
+		{
+			ID:   1,
+			Name: "Tom",
+		},
+		{
+			ID:   2,
+			Name: "Jom",
+		},
+		{
+			ID:   3,
+			Name: "Marry",
+		},
+	}
+	b := []int{1, 3}
+	res := FilterBySlice(a, b, func(p Person, i int) bool {
+		return p.ID == i
+	})
+	fmt.Println(res)
+}

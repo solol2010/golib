@@ -141,6 +141,20 @@ func Filter[T interface{}](s []T, f func(T) bool) []T {
 	return r
 }
 
+// Filter函数返回s1中所有与s2对应的元素
+func FilterBySlice[T1 any, T2 any](s1 []T1, s2 []T2, match func(T1, T2) bool) []T1 {
+	var res []T1
+	for i := 0; i < len(s1); i++ {
+		for j := 0; j < len(s2); j++ {
+			if match(s1[i], s2[j]) {
+				res = append(res, s1[i])
+				break
+			}
+		}
+	}
+	return res
+}
+
 // Reverse 反转Slice中元素的顺序。
 func Reverse[T interface{}](s []T) []T {
 	var r []T
